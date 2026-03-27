@@ -11,13 +11,9 @@ fi
 
 branch="$(git symbolic-ref --short HEAD 2>/dev/null || echo main)"
 
-# Push to GitHub repo requested by user.
 git push -u origin "$branch"
 
-# Trigger free cloud PDF build on GitHub Actions.
-echo "Pushed to GitHub. Triggering cloud PDF build workflow..."
-
-# Open workflow page where artifacts can be downloaded after build completes.
+echo "Pushed to GitHub. Cloud PDF build starts on GitHub Actions."
 open "$REPO_ACTIONS_URL"
 
-echo "Opened GitHub Actions workflow page. Download resume-pdf artifact after run completes."
+echo "Opened workflow page. Download resume-pdf artifact after run completes."
