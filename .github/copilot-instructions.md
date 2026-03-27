@@ -35,7 +35,10 @@ File Handling Rule:
 - If JD does not match existing versions, create a new version in the same folder using version naming: <CompanyName>-v1.tex, <CompanyName>-v2.tex, <CompanyName>-v3.tex.
 - Ensure version numbering always increases so the latest file for that company is obvious.
 - Save generated PDF files using this naming rule inside the company folder: Bollineni_Narendra_resume.pdf.
-- If Bollineni_Narendra_resume.pdf already exists in that company folder, save new files as Bollineni_Narendra_resume-v1.pdf, Bollineni_Narendra_resume-v2.pdf, and so on.
+- PDF naming must follow the selected .tex file version:
+	- If .tex file has no version suffix (example: Company.tex), save PDF as Bollineni_Narendra_resume.pdf (overwrite/update the same file).
+	- If .tex file has version suffix (example: Company-v2.tex), save PDF as Bollineni_Narendra_resume-v2.pdf.
+	- Do not auto-increment PDF versions independently from .tex versions.
 
 ATS Optimization Rules:
 - Tailor content to the exact job description keywords (skills, tools, responsibilities).
@@ -78,7 +81,8 @@ Execution Process:
 10. Reorder projects by job relevance.
 11. Verify all non-negotiable constraints are still satisfied.
 12. Run push_and_download_pdf.sh with both company folder and target tex file as input (example: bash -n .github/push_and_download_pdf.sh && bash .github/push_and_download_pdf.sh 1.Google 1.Google/Google.tex) so the selected company .tex version is compiled and the latest resume PDF is downloaded directly into that folder.
-13. Save the resulting company PDF as Bollineni_Narendra_resume.pdf, or as Bollineni_Narendra_resume-v<NextNumber>.pdf if the base PDF already exists.
+13. Wait for GitHub Actions build completion using minute-level polling (about 1-2 minutes typical) before attempting download.
+14. Save the resulting company PDF using .tex-version-matched naming only: base name for unversioned .tex and -vN for versioned .tex.
 
 Output Requirements:
 - Return the updated .tex content changes only.
@@ -88,4 +92,4 @@ Output Requirements:
 - Confirm the created company folder path and final PDF path after each run.
 - Ensure the final PDF is saved inside the same numbered company folder used for that JD.
 - For repeated company JDs, report whether an existing version was reused or a new version number was created.
-- Confirm the exact saved PDF name (Bollineni_Narendra_resume.pdf or versioned -vN form) in the final output.
+- Confirm the exact saved PDF name (Bollineni_Narendra_resume.pdf or versioned -vN form matched to the selected .tex file) in the final output.

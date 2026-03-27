@@ -4,8 +4,10 @@ set -euo pipefail
 REPO="nrenx/resume-job-automation"
 WORKFLOW="latex-pdf.yml"
 ARTIFACT_NAME="resume-pdf"
-POLL_SECONDS=5
-MAX_POLLS=60
+POLL_SECONDS=30
+MAX_POLLS=10
+STATUS_POLL_SECONDS=30
+MAX_STATUS_POLLS=15
 PDF_BASE_NAME="Bollineni_Narendra_resume"
 
 if [[ $# -lt 2 ]]; then
@@ -84,7 +86,33 @@ if [[ -z "$run_id" || "$run_id" == "null" ]]; then
 fi
 
 echo "Found run $run_id. Waiting for completion..."
-gh run watch "$run_id" --repo "$REPO" --exit-status
+run_status=""
+run_conclusion=""
+
+for _ in $(seq 1 "$MAX_STATUS_POLLS"); do
+  run_status="$(gh run view "$run_id" --repo "$REPO" --json status --jq '.status')"
+
+  if [[ "$run_status" == "completed" ]]; then
+    run_conclusion="$(gh run view "$run_id" --repo "$REPO" --json conclusion --jq '.conclusion')"
+    break
+  fi
+
+  sleep "$STATUS_POLL_SECONDS"
+done
+
+if [[ "$run_status" != "completed" ]]; then
+  echo "Workflow run $run_id did not complete in expected time."
+  echo "Open: https://github.com/$REPO/actions/runs/$run_id"
+  exit 1
+fi
+
+if [[ "$run_conclusion" != "success" ]]; then
+  echo "Workflow run $run_id completed with status: $run_conclusion"
+  echo "Open: https://github.com/$REPO/actions/runs/$run_id"
+  exit 1
+fi
+
+echo "Workflow run $run_id completed successfully."
 
 echo "Downloading PDF artifact..."
 tmp_dir="$(mktemp -d)"
@@ -98,27 +126,13 @@ if [[ -z "$downloaded_pdf" ]]; then
   exit 1
 fi
 
-base_pdf_path="$target_folder/$PDF_BASE_NAME.pdf"
+tex_basename="$(basename "$tex_file" .tex)"
 
-if [[ ! -f "$base_pdf_path" ]]; then
-  final_pdf_path="$base_pdf_path"
+if [[ "$tex_basename" =~ -v([0-9]+)$ ]]; then
+  tex_version="${BASH_REMATCH[1]}"
+  final_pdf_path="$target_folder/$PDF_BASE_NAME-v$tex_version.pdf"
 else
-  max_version=0
-
-  for existing_file in "$target_folder"/"$PDF_BASE_NAME"-v*.pdf; do
-    if [[ -f "$existing_file" ]]; then
-      file_name="$(basename "$existing_file")"
-      version_part="${file_name#${PDF_BASE_NAME}-v}"
-      version_number="${version_part%.pdf}"
-
-      if [[ "$version_number" =~ ^[0-9]+$ ]] && (( version_number > max_version )); then
-        max_version=$version_number
-      fi
-    fi
-  done
-
-  next_version=$((max_version + 1))
-  final_pdf_path="$target_folder/$PDF_BASE_NAME-v$next_version.pdf"
+  final_pdf_path="$target_folder/$PDF_BASE_NAME.pdf"
 fi
 
 cp "$downloaded_pdf" "$final_pdf_path"
