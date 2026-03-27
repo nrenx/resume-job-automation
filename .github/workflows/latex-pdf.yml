@@ -1,9 +1,12 @@
 name: Build Resume PDF
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
+    inputs:
+      tex_file:
+        description: "Relative path to the TeX file to compile"
+        required: true
+        type: string
 
 jobs:
   build-pdf:
@@ -13,14 +16,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Resolve output PDF path
+        id: output
+        shell: bash
+        run: |
+          tex_file="${{ inputs.tex_file }}"
+          pdf_file="${tex_file%.tex}.pdf"
+          echo "pdf_path=${pdf_file}" >> "$GITHUB_OUTPUT"
+
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Bollineni_Narendra_original.tex
+          root_file: ${{ inputs.tex_file }}
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
-          path: Bollineni_Narendra_original.pdf
+          path: ${{ steps.output.outputs.pdf_path }}
           if-no-files-found: error

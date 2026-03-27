@@ -32,7 +32,7 @@ File Handling Rule:
 - If the same company JD is shared again, first check whether that company's folder already exists.
 - If the folder exists, compare the new JD against existing company-specific .tex/.pdf version context.
 - If JD meaning matches an existing version, reuse that version instead of creating a duplicate.
-- If JD does not match existing versions, create a new version in the same folder using numbered naming: 1.<CompanyName>.tex, 2.<CompanyName>.tex, 3.<CompanyName>.tex.
+- If JD does not match existing versions, create a new version in the same folder using version naming: <CompanyName>-v1.tex, <CompanyName>-v2.tex, <CompanyName>-v3.tex.
 - Ensure version numbering always increases so the latest file for that company is obvious.
 - Save generated PDF files using this naming rule inside the company folder: Bollineni_Narendra_resume.pdf.
 - If Bollineni_Narendra_resume.pdf already exists in that company folder, save new files as Bollineni_Narendra_resume-v1.pdf, Bollineni_Narendra_resume-v2.pdf, and so on.
@@ -72,12 +72,12 @@ Execution Process:
 4. If the JD explicitly asks for more than 1 year of experience, ask user confirmation to proceed; stop if user asks to stop.
 5. Create the next numbered folder: <Index>.<CompanyName>.
 6. If the company folder already exists, check whether the JD matches an existing company version.
-7. If matched, reuse the latest matching .tex file; if not matched, create a new incremented version by copying Bollineni_Narendra_original.tex (example: 2.Google.tex, 3.Google.tex).
+7. If matched, reuse the latest matching .tex file; if not matched, create a new incremented version by copying Bollineni_Narendra_original.tex (example: Google-v1.tex, Google-v2.tex).
 8. Map keywords to existing resume content.
 9. Rewrite only allowed sections to increase keyword match and clarity.
 10. Reorder projects by job relevance.
 11. Verify all non-negotiable constraints are still satisfied.
-12. Run push_and_download_pdf.sh with the company folder as input (example: bash push_and_download_pdf.sh 1.Google) to push latest changes and download the latest resume PDF directly into that folder.
+12. Run push_and_download_pdf.sh with both company folder and target tex file as input (example: bash -n .github/push_and_download_pdf.sh && bash .github/push_and_download_pdf.sh 1.Google 1.Google/Google.tex) so the selected company .tex version is compiled and the latest resume PDF is downloaded directly into that folder.
 13. Save the resulting company PDF as Bollineni_Narendra_resume.pdf, or as Bollineni_Narendra_resume-v<NextNumber>.pdf if the base PDF already exists.
 
 Output Requirements:

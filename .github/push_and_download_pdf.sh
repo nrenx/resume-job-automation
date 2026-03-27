@@ -8,13 +8,26 @@ POLL_SECONDS=5
 MAX_POLLS=60
 PDF_BASE_NAME="Bollineni_Narendra_resume"
 
-if [[ $# -lt 1 ]]; then
-  echo "Usage: bash push_and_download_pdf.sh <target_folder>"
-  echo "Example: bash push_and_download_pdf.sh 1.Google"
+if [[ $# -lt 2 ]]; then
+  echo "Usage: bash .github/push_and_download_pdf.sh <target_folder> <tex_file>"
+  echo "Example: bash .github/push_and_download_pdf.sh 1.Google 1.Google/Google.tex"
   exit 1
 fi
 
 target_folder="$1"
+tex_file="${2:-}"
+
+if [[ -z "$tex_file" ]]; then
+  echo "Error: tex_file argument is required."
+  echo "Usage: bash .github/push_and_download_pdf.sh <target_folder> <tex_file>"
+  exit 1
+fi
+
+if [[ ! -f "$tex_file" ]]; then
+  echo "Error: TeX file not found: $tex_file"
+  exit 1
+fi
+
 mkdir -p "$target_folder"
 
 if ! command -v gh >/dev/null 2>&1; then
@@ -39,6 +52,13 @@ head_sha="$(git rev-parse HEAD)"
 echo "Pushing branch $branch to origin..."
 git push -u origin "$branch"
 
+echo "Triggering workflow for TeX file: $tex_file"
+dispatch_epoch="$(date +%s)"
+gh workflow run "$WORKFLOW" \
+  --repo "$REPO" \
+  --ref "$branch" \
+  -f "tex_file=$tex_file"
+
 echo "Waiting for workflow run for commit $head_sha ..."
 run_id=""
 for _ in $(seq 1 "$MAX_POLLS"); do
@@ -46,8 +66,9 @@ for _ in $(seq 1 "$MAX_POLLS"); do
     --repo "$REPO" \
     --workflow "$WORKFLOW" \
     --branch "$branch" \
-    --json databaseId,headSha,status,conclusion \
-    --jq '[.[] | select(.headSha == "'$head_sha'")][0].databaseId')"
+    --event workflow_dispatch \
+    --json databaseId,headSha,status,conclusion,createdAt \
+    --jq '[.[] | select(.headSha == "'$head_sha'" and (.createdAt | fromdateiso8601) >= '$dispatch_epoch')][0].databaseId')"
 
   if [[ -n "$run_id" && "$run_id" != "null" ]]; then
     break
