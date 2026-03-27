@@ -16,18 +16,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Resolve output PDF path
-        id: output
-        shell: bash
-        run: |
-          tex_file="${{ inputs.tex_file }}"
-          pdf_file="${tex_file%.tex}.pdf"
-          echo "pdf_path=${pdf_file}" >> "$GITHUB_OUTPUT"
-
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
           root_file: ${{ inputs.tex_file }}
+
+      - name: Locate compiled PDF
+        id: output
+        shell: bash
+        run: |
+          tex_file="${{ inputs.tex_file }}"
+          pdf_name="$(basename "${tex_file%.tex}.pdf")"
+          pdf_path="$(find . -type f -name "$pdf_name" | head -n 1)"
+
+          if [[ -z "$pdf_path" ]]; then
+            echo "Compiled PDF not found for input: $tex_file"
+            exit 1
+          fi
+
+          echo "pdf_path=$pdf_path" >> "$GITHUB_OUTPUT"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
