@@ -1,0 +1,64 @@
+Task: Update my LaTeX resume to match a given job description for ATS optimization.
+
+Primary Goal:
+- Improve keyword alignment and relevance for the target role while preserving the existing one-page layout.
+
+Non-Negotiable Constraints:
+- Keep the resume to exactly one page in Overleaf.
+- Do not change font size, margins, spacing settings, or overall visual format.
+- Do not add extra blank lines or increase section spacing.
+- Do not modify these sections:
+	- Education
+	- Certifications
+	- Work Experience
+- Do not change project titles (names).
+
+Allowed Changes:
+- Career Objective (or Summary)
+- Development & Technical Skills
+- Project descriptions/bullets (content only, not project names)
+- Project order (reorder by role relevance)
+
+File Handling Rule:
+- Before making any modifications, use Bollineni_Narendra_original.tex as the source file.
+- Create a duplicate file named <CompanyName>.tex (for example: TCS.tex, Infosys.tex, Google.tex).
+- Perform all edits only in <CompanyName>.tex.
+- Never modify Bollineni_Narendra_original.tex so the original resume always remains untouched.
+
+ATS Optimization Rules:
+- Tailor content to the exact job description keywords (skills, tools, responsibilities).
+- Use concise, impact-oriented bullet points with role-relevant terms.
+- Avoid keyword stuffing; keep language natural and specific.
+- Keep bullets short to preserve one-page fit.
+
+Fresher Profile Rules:
+- Treat this resume as a fresher/entry-level profile.
+- Keep wording realistic for a fresher; do not use senior/lead/architect-style claims.
+- Do not add complex achievements, large-scale ownership claims, or advanced metrics unless clearly supported by existing resume content or verifiable project/work details.
+- Prefer practical contribution language such as built, implemented, assisted, integrated, automated, and tested.
+- Keep project impact statements grounded, simple, and credible.
+
+Skills Section Rules:
+- Trim skills to core role-matching items.
+- Group skills by proficiency (for example: Advanced, Intermediate, Basic) if space allows without changing layout.
+- Keep the following lines present (can be lightly punctuation-normalized, but meaning must remain unchanged):
+	- Tools & Others: Git, GitHub, FFmpeg, Basic Understanding of Deployment and Hosting
+	- Soft Skills: Problem solving, time management, team collaboration, fast learner, adaptability, communication.
+	- Automation & AI Tools: n8n (Workflow Automation, API Pipelines, Scheduling), OpenAI (ChatGPT), Anthropic (Claude), Grok, DeepSeek, Ollama (Local Models), Google AI, Text-to-Speech for Automation Workflows
+
+Research Guidance:
+- If company context is needed, use web search to collect only relevant public details (tech stack, role expectations, product domain).
+- Use researched context only to improve keyword relevance; do not invent unverifiable claims.
+
+Execution Process:
+1. Analyze the job description and extract high-priority ATS keywords.
+2. Map keywords to existing resume content.
+3. Rewrite only allowed sections to increase keyword match and clarity.
+4. Reorder projects by job relevance.
+5. Verify all non-negotiable constraints are still satisfied.
+
+Output Requirements:
+- Return the updated .tex content changes only.
+- Keep wording concise and professional.
+- Do not include internal reasoning steps.
+- If any requested optimization conflicts with one-page constraints, prioritize one-page layout and state what was minimized.
