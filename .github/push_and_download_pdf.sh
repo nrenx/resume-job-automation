@@ -6,6 +6,16 @@ WORKFLOW="latex-pdf.yml"
 ARTIFACT_NAME="resume-pdf"
 POLL_SECONDS=5
 MAX_POLLS=60
+PDF_BASE_NAME="Bollineni_Narendra_resume"
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: bash push_and_download_pdf.sh <target_folder>"
+  echo "Example: bash push_and_download_pdf.sh 1.Google"
+  exit 1
+fi
+
+target_folder="$1"
+mkdir -p "$target_folder"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "GitHub CLI is required. Install with: brew install gh"
@@ -56,11 +66,41 @@ echo "Found run $run_id. Waiting for completion..."
 gh run watch "$run_id" --repo "$REPO" --exit-status
 
 echo "Downloading PDF artifact..."
-gh run download "$run_id" --repo "$REPO" --name "$ARTIFACT_NAME" --dir .
+tmp_dir="$(mktemp -d)"
+gh run download "$run_id" --repo "$REPO" --name "$ARTIFACT_NAME" --dir "$tmp_dir"
 
-# Flatten artifact output if gh created a subdirectory.
-if [[ -f "$ARTIFACT_NAME/Bollineni_Narendra_original.pdf" ]]; then
-  cp "$ARTIFACT_NAME/Bollineni_Narendra_original.pdf" ./Bollineni_Narendra_original.pdf
+downloaded_pdf="$(find "$tmp_dir" -type f -name "*.pdf" | head -n 1)"
+
+if [[ -z "$downloaded_pdf" ]]; then
+  echo "No PDF artifact found in workflow run $run_id"
+  rm -rf "$tmp_dir"
+  exit 1
 fi
 
-echo "Done. Latest PDF is available in this folder."
+base_pdf_path="$target_folder/$PDF_BASE_NAME.pdf"
+
+if [[ ! -f "$base_pdf_path" ]]; then
+  final_pdf_path="$base_pdf_path"
+else
+  max_version=0
+
+  for existing_file in "$target_folder"/"$PDF_BASE_NAME"-v*.pdf; do
+    if [[ -f "$existing_file" ]]; then
+      file_name="$(basename "$existing_file")"
+      version_part="${file_name#${PDF_BASE_NAME}-v}"
+      version_number="${version_part%.pdf}"
+
+      if [[ "$version_number" =~ ^[0-9]+$ ]] && (( version_number > max_version )); then
+        max_version=$version_number
+      fi
+    fi
+  done
+
+  next_version=$((max_version + 1))
+  final_pdf_path="$target_folder/$PDF_BASE_NAME-v$next_version.pdf"
+fi
+
+cp "$downloaded_pdf" "$final_pdf_path"
+rm -rf "$tmp_dir"
+
+echo "Done. Latest PDF saved to: $final_pdf_path"
