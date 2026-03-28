@@ -57,9 +57,9 @@ Fresher Profile Rules:
 Skills Section Rules:
 - Trim skills to core role-matching items.
 - Group skills by proficiency (for example: Advanced, Intermediate, Basic) if space allows without changing layout.
+- If the generated resume exceeds one page, remove the `Soft Skills` line first before shortening other content.
 - Keep the following lines present (can be lightly punctuation-normalized, but meaning must remain unchanged):
 	- Tools & Others: Git, GitHub, FFmpeg, Basic Understanding of Deployment and Hosting
-	- Soft Skills: Problem solving, time management, team collaboration, fast learner, adaptability, communication.
 	- Automation & AI Tools: n8n (Workflow Automation, API Pipelines, Scheduling), OpenAI (ChatGPT), Anthropic (Claude), Grok, DeepSeek, Ollama (Local Models), Google AI, Text-to-Speech for Automation Workflows
 
 Research Guidance:
@@ -89,6 +89,7 @@ Output Requirements:
 - Keep wording concise and professional.
 - Do not include internal reasoning steps.
 - If any requested optimization conflicts with one-page constraints, prioritize one-page layout and state what was minimized.
+- If resume length exceeds one page after tailoring, remove the `Soft Skills` line first, then recompile and recheck page count.
 - Confirm the created company folder path and final PDF path after each run.
 - Ensure the final PDF is saved inside the same numbered company folder used for that JD.
 - For repeated company JDs, report whether an existing version was reused or a new version number was created.
