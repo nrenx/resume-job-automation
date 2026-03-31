@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { PDFDocument } from "pdf-lib";
 
 const rootDir = process.cwd();
 const inputJsonPath = path.join(rootDir, "resume.json");
@@ -130,6 +131,21 @@ async function buildPdfFromHtml(htmlPath) {
   }
 }
 
+async function getPdfPageCount(pdfPath) {
+  const pdfBytes = fs.readFileSync(pdfPath);
+  const pdfDoc = await PDFDocument.load(pdfBytes);
+  return pdfDoc.getPageCount();
+}
+
+async function enforceSinglePagePdf(pdfPath) {
+  const pageCount = await getPdfPageCount(pdfPath);
+  if (pageCount !== 1) {
+    throw new Error(
+      `PDF page count validation failed: generated ${pageCount} pages (required exactly 1).`,
+    );
+  }
+}
+
 (async () => {
   const htmlPath = buildHtml();
   console.log(`HTML generated: ${htmlPath}`);
@@ -139,6 +155,7 @@ async function buildPdfFromHtml(htmlPath) {
   }
 
   await buildPdfFromHtml(htmlPath);
+  await enforceSinglePagePdf(outputPdfPath);
   console.log(`PDF generated: ${outputPdfPath}`);
 })().catch((error) => {
   console.error(error.message || error);
