@@ -1,0 +1,15 @@
+{
+  "name": "resume-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "resume": "node build-resume.mjs --pdf",
+    "build:html": "node build-resume.mjs --html",
+    "build:pdf": "node build-resume.mjs --pdf",
+    "build": "node build-resume.mjs --pdf"
+  },
+  "dependencies": {
+    "puppeteer": "^24.7.2"
+  }
+}

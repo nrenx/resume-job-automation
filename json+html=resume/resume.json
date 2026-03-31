@@ -1,0 +1,188 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "email": "narendrabollineni2002@gmail.com",
+    "phone": "+91 7989976214",
+    "portfolio": "https://nrenx.github.io/portfolio/",
+    "portfolioLabel": "nrenx.github.io/portfolio",
+    "github": "https://github.com/nrenx",
+    "githubLabel": "github.com/nrenx",
+    "linkedin": "https://linkedin.com/in/bollineninarendrachowdary",
+    "linkedinLabel": "linkedin.com/in/bollineninarendrachowdary",
+    "lastUpdated": "October 2025"
+  },
+  "objective": "Final-year Computer Science and Engineering student with expertise in full-stack development, UI/UX design, and workflow automation. Proficient in building SaaS applications using React, TypeScript, and Supabase. Completed a UI/UX internship at Zoro Innovations, contributing to multiple live projects.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering(B.Tech)",
+      "institution": "NBKRIST College (Autonomous), Vidyanagar, Tirupati",
+      "period": "2022-2026",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Intermediate(MPC)",
+      "institution": "Narayana Junior College, Gudur, Tirupati",
+      "period": "2020-2022",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Narayana EM High School, ISKON City, Nellore",
+      "period": "2019-2020",
+      "region": "Andhra Pradesh"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming & Web",
+      "items": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "TypeScript (Basic)",
+        "Python (Basic - scripting and automation)",
+        "Responsive UI Development"
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "items": ["React (Vite)", "Tailwind CSS"]
+    },
+    {
+      "category": "Backend & Cloud",
+      "items": [
+        "SQL",
+        "Supabase (Authentication, Realtime DB, Storage)",
+        "Firebase (Basic)",
+        "REST API Integration"
+      ]
+    },
+    {
+      "category": "Automation & AI Tools",
+      "items": [
+        "n8n (Workflow Automation, API Pipelines, Scheduling)",
+        "OpenAI (ChatGPT)",
+        "Anthropic (Claude)",
+        "Grok",
+        "DeepSeek",
+        "Ollama (Local Models)",
+        "Google AI",
+        "Text-to-Speech for Automation Workflows"
+      ]
+    },
+    {
+      "category": "Mobile Development",
+      "items": ["Flutter (Basic Cross-Platform Development)", "Android Studio (Basic)"]
+    },
+    {
+      "category": "Tools & Others",
+      "items": ["Git", "GitHub", "FFmpeg", "Basic Understanding of Deployment and Hosting"]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        "Problem solving",
+        "time management",
+        "team collaboration",
+        "fast learner",
+        "adaptability",
+        "communication."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "UI/UX Design Intern",
+      "company": "Zoro Innovations",
+      "period": "July 2025 - August 2025",
+      "certificateUrl": "https://drive.google.com/file/d/1Mdj6kdTXaku3_Z-Vh2tATbli0cOKpZ-h/view?usp=sharing",
+      "certificateLabel": "View Certificate",
+      "details": [
+        "Designed user interfaces and experiences for campus administration and student management systems using industry-standard tools and methodologies."
+      ]
+    },
+    {
+      "title": "Interview Coordination Support (Freelance)",
+      "company": "IT Hiring Process Support",
+      "period": "2024 (4-Month Freelance Assignment)",
+      "details": [
+        "Scheduled interviews by matching candidate availability with interviewer time slots.",
+        "Managed candidate follow-ups and interview status updates with clear communication."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Presents Agentic AI Day 2025",
+      "issuer": "Hack2skill",
+      "url": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I11874"
+    },
+    {
+      "name": "Critical Thinking and Problem Solving",
+      "issuer": "LinkedIn Learning"
+    },
+    {
+      "name": "Python Programming",
+      "issuer": "Coursera"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "Udemy"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Bhagavad Gita Multilingual Video Automation",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Bhagavad-gita" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@Gita_Gyanaam/playlists" },
+        { "label": "Instagram", "url": "https://www.instagram.com/gita_gyanaam/" },
+        { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61577900636828" }
+      ],
+      "details": [
+        "Built a multilingual Bhagavad Gita platform and automated content workflow for verse-based video publishing."
+      ],
+      "technologies": ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS", "JSON-based verse data handling"],
+      "tools": ["n8n", "Google Text-to-Speech", "Google AI workflows", "FFmpeg", "YouTube/Instagram/Facebook publishing"]
+    },
+    {
+      "name": "Kaveri Traders 3D Business Website",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/kaveri_traders" },
+        { "label": "Web App", "url": "https://nrenx.github.io/kaveri_traders/" }
+      ],
+      "details": [
+        "Built a premium business website with 3D-style scrollytelling visuals for wood supply services and lead generation."
+      ],
+      "technologies": ["Next.js 16 (App Router, static export)", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Lenis"],
+      "tools": ["GitHub", "GitHub Pages deployment", "Responsive UI", "WhatsApp CTA integration"]
+    },
+    {
+      "name": "NBKRIST Student Portal",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/nbkrist-student-portal" },
+        { "label": "Web App", "url": "https://nbkrstudenthub.me/" }
+      ],
+      "details": [
+        "Built a student portal for accessing academic information, attendance records, and exam results without login."
+      ],
+      "technologies": ["Vite", "React", "TypeScript", "React Router", "Tailwind CSS", "shadcn/ui", "Supabase (DB + Auth)"],
+      "tools": ["Python data scraping/upload scripts", "GitHub", "GitHub Actions deployment", "Google AdSense integration"]
+    },
+    {
+      "name": "Sign Language Translator AI",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Sign-Language-Translator_using_AI-ML" }
+      ],
+      "details": [
+        "Built a privacy-first, browser-based ASL translator with real-time hand gesture detection and speech/translation support."
+      ],
+      "technologies": ["Vite", "React", "TypeScript", "TensorFlow.js", "MediaPipe Hands", "Tailwind CSS"],
+      "tools": ["On-device inference", "Webcam-based live detection", "Model training setup with Google Colab workflows"]
+    }
+  ],
+  "moreProjects": {
+    "label": "More projects available at github.com/nrenx",
+    "url": "https://github.com/nrenx"
+  }
+}
