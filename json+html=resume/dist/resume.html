@@ -330,6 +330,14 @@
           )
           .join("");
 
+      const buildMoreProjectsNote = (moreProjects) => {
+        if (!moreProjects?.url || !moreProjects?.label) {
+          return "";
+        }
+
+        return `<p class="small-note"><em>${link(moreProjects.url, moreProjects.label)}</em></p>`;
+      };
+
       const html = `
         <header class="header">
           <div class="name">${esc(resume.basics.name)}</div>
@@ -367,7 +375,7 @@
           <h2 class="section-title">Projects</h2>
           <div class="section-body">
             ${buildProjects(resume.projects)}
-            <p class="small-note"><em>${link(resume.moreProjects.url, resume.moreProjects.label)}</em></p>
+            ${buildMoreProjectsNote(resume.moreProjects)}
           </div>
         </section>
       `;

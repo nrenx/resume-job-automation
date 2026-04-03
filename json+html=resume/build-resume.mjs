@@ -15,15 +15,30 @@ const buildHtmlOnly = args.has("--html");
 const buildPdf = args.has("--pdf") || (!args.has("--html") && !args.has("--pdf"));
 
 const RESUME_LIMITS = {
-  objectiveMaxChars: 340,
+  objectiveMaxLines: 3,
   educationMaxItems: 3,
-  skillsMaxItems: 7,
+  skillsMaxItems: 10,
   experienceMaxItems: 2,
+  experienceTotalDetailLinesMax: 6,
   experienceDetailsMaxPerItem: 2,
   certificationsMaxItems: 4,
   projectsMaxItems: 4,
+  projectTotalLinesMaxPerItem: 4,
   projectDetailsMaxPerItem: 2,
 };
+
+function countLines(text) {
+  if (typeof text !== "string") {
+    return 0;
+  }
+
+  const normalized = text.replace(/\r\n/g, "\n").trim();
+  if (!normalized) {
+    return 0;
+  }
+
+  return normalized.split("\n").length;
+}
 
 function validateResumeData(data) {
   const errors = [];
@@ -34,7 +49,7 @@ function validateResumeData(data) {
   };
 
   if (typeof data.objective === "string") {
-    pushIfExceeded("objective characters", data.objective.trim().length, RESUME_LIMITS.objectiveMaxChars);
+    pushIfExceeded("objective lines", countLines(data.objective), RESUME_LIMITS.objectiveMaxLines);
   }
 
   if (Array.isArray(data.education)) {
@@ -47,6 +62,16 @@ function validateResumeData(data) {
 
   if (Array.isArray(data.experience)) {
     pushIfExceeded("experience items", data.experience.length, RESUME_LIMITS.experienceMaxItems);
+    const totalDetails = data.experience.reduce(
+      (sum, item) => sum + (Array.isArray(item?.details) ? item.details.length : 0),
+      0,
+    );
+    pushIfExceeded(
+      "work experience total detail lines",
+      totalDetails,
+      RESUME_LIMITS.experienceTotalDetailLinesMax,
+    );
+
     data.experience.forEach((item, index) => {
       const detailsCount = Array.isArray(item?.details) ? item.details.length : 0;
       pushIfExceeded(
@@ -65,6 +90,13 @@ function validateResumeData(data) {
     pushIfExceeded("project items", data.projects.length, RESUME_LIMITS.projectsMaxItems);
     data.projects.forEach((item, index) => {
       const detailsCount = Array.isArray(item?.details) ? item.details.length : 0;
+      const projectTotalLines = detailsCount + 2;
+
+      pushIfExceeded(
+        `project[${index + 1}] total lines (description + technologies + tools)`,
+        projectTotalLines,
+        RESUME_LIMITS.projectTotalLinesMaxPerItem,
+      );
       pushIfExceeded(
         `project[${index + 1}] detail lines`,
         detailsCount,
@@ -89,12 +121,16 @@ function ensureFileExists(filePath) {
   }
 }
 
-function buildHtml() {
+function buildHtml(options = {}) {
   ensureFileExists(inputJsonPath);
   ensureFileExists(templatePath);
+  const { hideMoreProjects = false } = options;
 
   const rawJson = fs.readFileSync(inputJsonPath, "utf8");
   const data = JSON.parse(rawJson);
+  if (hideMoreProjects) {
+    delete data.moreProjects;
+  }
   validateResumeData(data);
   const template = fs.readFileSync(templatePath, "utf8");
 
@@ -146,17 +182,42 @@ async function enforceSinglePagePdf(pdfPath) {
   }
 }
 
-(async () => {
-  const htmlPath = buildHtml();
-  console.log(`HTML generated: ${htmlPath}`);
+async function buildWithSinglePageFallback() {
+  let htmlPath = buildHtml();
+  await buildPdfFromHtml(htmlPath);
 
-  if (buildHtmlOnly && !buildPdf) {
+  const initialPageCount = await getPdfPageCount(outputPdfPath);
+  if (initialPageCount === 1) {
     return;
   }
 
+  const rawJson = fs.readFileSync(inputJsonPath, "utf8");
+  const data = JSON.parse(rawJson);
+  const hasMoreProjectsLine =
+    data?.moreProjects &&
+    typeof data.moreProjects.label === "string" &&
+    data.moreProjects.label.trim().length > 0;
+
+  if (!hasMoreProjectsLine) {
+    throw new Error(
+      `PDF page count validation failed: generated ${initialPageCount} pages (required exactly 1).`,
+    );
+  }
+
+  htmlPath = buildHtml({ hideMoreProjects: true });
   await buildPdfFromHtml(htmlPath);
   await enforceSinglePagePdf(outputPdfPath);
-  console.log(`PDF generated: ${outputPdfPath}`);
+}
+
+(async () => {
+  if (buildHtmlOnly && !buildPdf) {
+    buildHtml();
+    console.log("Executed success");
+    return;
+  }
+
+  await buildWithSinglePageFallback();
+  console.log("Executed success");
 })().catch((error) => {
   console.error(error.message || error);
   process.exit(1);
