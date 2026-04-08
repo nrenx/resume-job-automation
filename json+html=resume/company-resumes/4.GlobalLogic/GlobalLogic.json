@@ -1,0 +1,187 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "email": "narendrabollineni2002@gmail.com",
+    "phone": "+91 7989976214",
+    "portfolio": "https://nrenx.github.io/portfolio/",
+    "portfolioLabel": "nrenx.github.io/portfolio",
+    "github": "https://github.com/nrenx",
+    "githubLabel": "github.com/nrenx",
+    "linkedin": "https://linkedin.com/in/bollineninarendrachowdary",
+    "linkedinLabel": "linkedin.com/in/bollineninarendrachowdary",
+    "lastUpdated": "October 2026"
+  },
+  "objective": "Detail-oriented graduate with strong analytical thinking, communication skills, and a quality-first mindset. Experienced in research, data interpretation, and process-driven execution through academic and project work. Eager to contribute as an Associate Analyst by delivering accurate outputs and meeting productivity standards.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering(B.Tech)",
+      "institution": "NBKRIST College (Autonomous), Vidyanagar, Tirupati",
+      "period": "2022-2026",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Intermediate(MPC)",
+      "institution": "Narayana Junior College, Gudur, Tirupati",
+      "period": "2020-2022",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Narayana EM High School, ISKON City, Nellore",
+      "period": "2019-2020",
+      "region": "Andhra Pradesh"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Analytical and Research Skills",
+      "items": [
+        "Fact-based Research",
+        "Trend and Pattern Interpretation",
+        "Problem Solving",
+        "Critical Thinking",
+        "Data Accuracy and Validation"
+      ]
+    },
+    {
+      "category": "Communication and Collaboration",
+      "items": [
+        "Written and Verbal Communication",
+        "Stakeholder Coordination",
+        "Team Collaboration",
+        "Interpersonal Skills"
+      ]
+    },
+    {
+      "category": "Operations and Quality",
+      "items": [
+        "Meeting Productivity Targets",
+        "Quality Standards Adherence",
+        "Attention to Detail",
+        "Decision Making",
+        "Process Improvement Mindset"
+      ]
+    },
+    {
+      "category": "Domain and Tools Exposure",
+      "items": [
+        "GIS (Foundational Exposure)",
+        "Excel for Data Handling",
+        "Documentation and Reporting"
+      ]
+    },
+    {
+      "category": "Automation and AI Tools",
+      "items": [
+        "n8n (Workflow Automation, API Pipelines, Scheduling)",
+        "OpenAI (ChatGPT)",
+        "Anthropic (Claude)",
+        "Grok",
+        "DeepSeek",
+        "Ollama (Local Models)",
+        "Google AI",
+        "Text-to-Speech for Automation Workflows"
+      ]
+    },
+    {
+      "category": "Tools and Others",
+      "items": ["Git", "GitHub", "FFmpeg", "Basic Understanding of Deployment and Hosting"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "UI/UX Design Intern",
+      "company": "Zoro Innovations",
+      "period": "July 2025 - August 2025",
+      "certificateUrl": "https://drive.google.com/file/d/1Mdj6kdTXaku3_Z-Vh2tATbli0cOKpZ-h/view?usp=sharing",
+      "certificateLabel": "View Certificate",
+      "details": [
+        "Researched user needs and converted findings into structured UI updates, improving clarity and usability across modules.",
+        "Performed review-based checks on deliverables for consistency and quality before release in collaboration with the team."
+      ]
+    },
+    {
+      "title": "Interview Coordination Support (Freelance)",
+      "company": "IT Hiring Process Support",
+      "period": "2024 (4-Month Freelance Assignment)",
+      "details": [
+        "Analyzed scheduling constraints and coordinated interview timelines to reduce delays and improve process throughput.",
+        "Tracked status updates and communicated clearly with stakeholders to support timely, accurate workflow execution."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Presents Agentic AI Day 2025",
+      "issuer": "Hack2skill",
+      "url": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I11874"
+    },
+    {
+      "name": "Critical Thinking and Problem Solving",
+      "issuer": "LinkedIn Learning"
+    },
+    {
+      "name": "Python Programming",
+      "issuer": "Coursera"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "Udemy"
+    }
+  ],
+  "projects": [
+    {
+      "name": "NBKRIST Student Portal",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/nbkrist-student-portal" },
+        { "label": "Web App", "url": "https://nbkrstudenthub.me/" }
+      ],
+      "details": [
+        "Maintained structured academic datasets and analyzed usage patterns to improve information access and user support workflows."
+      ],
+      "technologies": ["React", "TypeScript", "Supabase"],
+      "tools": ["Python scripts", "GitHub", "GitHub Actions"]
+    },
+    {
+      "name": "Bhagavad Gita Multilingual Video Automation",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Bhagavad-gita" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@Gita_Gyanaam/playlists" },
+        { "label": "Instagram", "url": "https://www.instagram.com/gita_gyanaam/" },
+        { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61577900636828" }
+      ],
+      "details": [
+        "Implemented quality-checked automation workflows and monitored output consistency for high-volume content operations."
+      ],
+      "technologies": ["Next.js", "React", "TypeScript"],
+      "tools": ["n8n", "FFmpeg", "Google Text-to-Speech"]
+    },
+    {
+      "name": "Sign Language Translator AI",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Sign-Language-Translator_using_AI-ML" }
+      ],
+      "details": [
+        "Evaluated real-time gesture outputs, identified error patterns, and improved model response quality through iterative testing."
+      ],
+      "technologies": ["React", "TypeScript", "TensorFlow.js"],
+      "tools": ["MediaPipe Hands", "Google Colab", "Webcam detection"]
+    },
+    {
+      "name": "Kaveri Traders 3D Business Website",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/kaveri_traders" },
+        { "label": "Web App", "url": "https://nrenx.github.io/kaveri_traders/" }
+      ],
+      "details": [
+        "Delivered a client-facing website by planning tasks, tracking revisions, and ensuring timely and accurate deliverables."
+      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "tools": ["GitHub", "GitHub Pages", "WhatsApp CTA"]
+    }
+  ],
+  "moreProjects": {
+    "label": "More projects available at github.com/nrenx",
+    "url": "https://github.com/nrenx"
+  }
+}

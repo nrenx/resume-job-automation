@@ -93,6 +93,7 @@ Output Requirements
 - If length exceeds one page, remove Soft Skills first, then shorten other content.
 - If still exceeding one page, you may remove this footer line safely:
   - More projects available at github.com/nrenx
+- After finishing one JD and confirming the output paths, always ask the user to share the next JD.
 - Confirm:
   - Company folder path
   - Selected JSON version (reused or new)

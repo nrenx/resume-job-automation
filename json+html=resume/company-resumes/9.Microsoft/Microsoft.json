@@ -1,0 +1,198 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "email": "narendrabollineni2002@gmail.com",
+    "phone": "+91 7989976214",
+    "portfolio": "https://nrenx.github.io/portfolio/",
+    "portfolioLabel": "nrenx.github.io/portfolio",
+    "github": "https://github.com/nrenx",
+    "githubLabel": "github.com/nrenx",
+    "linkedin": "https://linkedin.com/in/bollineninarendrachowdary",
+    "linkedinLabel": "linkedin.com/in/bollineninarendrachowdary",
+    "lastUpdated": "October 2026"
+  },
+  "objective": "Entry-level data science candidate with hands-on experience in SQL, Python, and analytical workflows across structured and unstructured data. Built projects focused on data preparation, model testing, and insight generation for product decisions. Eager to contribute at Microsoft through experimentation, ML prototyping, and cross-functional collaboration.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering(B.Tech)",
+      "institution": "NBKRIST College (Autonomous), Vidyanagar, Tirupati",
+      "period": "2022-2026",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Intermediate(MPC)",
+      "institution": "Narayana Junior College, Gudur, Tirupati",
+      "period": "2020-2022",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Narayana EM High School, ISKON City, Nellore",
+      "period": "2019-2020",
+      "region": "Andhra Pradesh"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Data Science Foundations",
+      "items": [
+        "Hypothesis-based Analysis",
+        "Data Cleaning and Preparation",
+        "Feature-level Thinking",
+        "Model Evaluation Basics",
+        "Actionable Insight Generation"
+      ]
+    },
+    {
+      "category": "Programming and Analytics",
+      "items": [
+        "SQL",
+        "Python (Basic - scripting and automation)",
+        "JavaScript",
+        "TypeScript",
+        "Data Science Workflow Basics"
+      ]
+    },
+    {
+      "category": "Modeling and Experimentation",
+      "items": [
+        "Regression Concepts",
+        "Decision Tree Concepts",
+        "Model Testing on Sample and Real Data",
+        "Experimentation and Iteration"
+      ]
+    },
+    {
+      "category": "Business and Stakeholder Impact",
+      "items": [
+        "Insight Storytelling",
+        "Cross-functional Collaboration",
+        "Project Planning Support",
+        "Risk and Constraint Awareness"
+      ]
+    },
+    {
+      "category": "Data Platforms and APIs",
+      "items": [
+        "Supabase (Authentication, Realtime DB, Storage)",
+        "REST API Integration",
+        "Firebase (Basic)",
+        "React (Vite)",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "category": "Automation and AI Tools",
+      "items": [
+        "n8n (Workflow Automation, API Pipelines, Scheduling)",
+        "OpenAI (ChatGPT)",
+        "Anthropic (Claude)",
+        "Grok",
+        "DeepSeek",
+        "Ollama (Local Models)",
+        "Google AI",
+        "Text-to-Speech for Automation Workflows"
+      ]
+    },
+    {
+      "category": "Tools and Others",
+      "items": ["Git", "GitHub", "FFmpeg", "Basic Understanding of Deployment and Hosting"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "UI/UX Design Intern",
+      "company": "Zoro Innovations",
+      "period": "July 2025 - August 2025",
+      "certificateUrl": "https://drive.google.com/file/d/1Mdj6kdTXaku3_Z-Vh2tATbli0cOKpZ-h/view?usp=sharing",
+      "certificateLabel": "View Certificate",
+      "details": [
+        "Analyzed user interaction patterns and translated findings into structured feature updates aligned with project objectives.",
+        "Supported iterative validation by documenting observations, communicating issues, and assisting with data-backed improvement decisions."
+      ]
+    },
+    {
+      "title": "Interview Coordination Support (Freelance)",
+      "company": "IT Hiring Process Support",
+      "period": "2024 (4-Month Freelance Assignment)",
+      "details": [
+        "Tracked operational data points across concurrent workflows and prepared concise status updates to support timely decisions.",
+        "Collaborated with multiple stakeholders through calls and emails, improving clarity and continuity in process execution."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Presents Agentic AI Day 2025",
+      "issuer": "Hack2skill",
+      "url": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I11874"
+    },
+    {
+      "name": "Critical Thinking and Problem Solving",
+      "issuer": "LinkedIn Learning"
+    },
+    {
+      "name": "Python Programming",
+      "issuer": "Coursera"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "Udemy"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Sign Language Translator AI",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Sign-Language-Translator_using_AI-ML" }
+      ],
+      "details": [
+        "Built and tested an AI-based translation system, running model evaluations on real-time inputs and documenting quality findings."
+      ],
+      "technologies": ["React", "TypeScript", "TensorFlow.js"],
+      "tools": ["MediaPipe Hands", "Google Colab", "Webcam detection"]
+    },
+    {
+      "name": "NBKRIST Student Portal",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/nbkrist-student-portal" },
+        { "label": "Web App", "url": "https://nbkrstudenthub.me/" }
+      ],
+      "details": [
+        "Integrated and analyzed student data flows to identify usage trends and support hypothesis-led feature improvements."
+      ],
+      "technologies": ["React", "TypeScript", "Supabase"],
+      "tools": ["Python scripts", "GitHub", "GitHub Actions"]
+    },
+    {
+      "name": "Bhagavad Gita Multilingual Video Automation",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Bhagavad-gita" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@Gita_Gyanaam/playlists" },
+        { "label": "Instagram", "url": "https://www.instagram.com/gita_gyanaam/" },
+        { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61577900636828" }
+      ],
+      "details": [
+        "Implemented analytics-aware automation workflows and monitored pipeline outputs to improve consistency and throughput." 
+      ],
+      "technologies": ["Next.js", "React", "TypeScript"],
+      "tools": ["n8n", "FFmpeg", "Google Text-to-Speech"]
+    },
+    {
+      "name": "Kaveri Traders 3D Business Website",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/kaveri_traders" },
+        { "label": "Web App", "url": "https://nrenx.github.io/kaveri_traders/" }
+      ],
+      "details": [
+        "Built and refined a business website using iterative analysis of user flows and engagement signals for measurable improvements."
+      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "tools": ["GitHub", "GitHub Pages", "WhatsApp CTA"]
+    }
+  ],
+  "moreProjects": {
+    "label": "More projects available at github.com/nrenx",
+    "url": "https://github.com/nrenx"
+  }
+}

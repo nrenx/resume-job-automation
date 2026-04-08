@@ -1,0 +1,195 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "email": "narendrabollineni2002@gmail.com",
+    "phone": "+91 7989976214",
+    "portfolio": "https://nrenx.github.io/portfolio/",
+    "portfolioLabel": "nrenx.github.io/portfolio",
+    "github": "https://github.com/nrenx",
+    "githubLabel": "github.com/nrenx",
+    "linkedin": "https://linkedin.com/in/bollineninarendrachowdary",
+    "linkedinLabel": "linkedin.com/in/bollineninarendrachowdary",
+    "lastUpdated": "October 2026"
+  },
+  "objective": "Entry-level professional with hands-on experience in data handling, requirements understanding, and process coordination. Assisted teams in tracking tasks, documenting updates, and supporting testing-focused workflows with strong attention to detail. Eager to contribute as an Associate Business Analyst with proactive communication and delivery discipline.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering(B.Tech)",
+      "institution": "NBKRIST College (Autonomous), Vidyanagar, Tirupati",
+      "period": "2022-2026",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Intermediate(MPC)",
+      "institution": "Narayana Junior College, Gudur, Tirupati",
+      "period": "2020-2022",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Narayana EM High School, ISKON City, Nellore",
+      "period": "2019-2020",
+      "region": "Andhra Pradesh"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Business Analysis Foundations",
+      "items": [
+        "Requirements Analysis and Elicitation",
+        "Scope and Stakeholder Coordination",
+        "Business Process Understanding (As-Is and To-Be)",
+        "Requirements Matrix and Process Flow (Basic)"
+      ]
+    },
+    {
+      "category": "Data and Reporting",
+      "items": [
+        "Excel",
+        "Data Entry and Data Validation",
+        "Project Metrics Tracking and Reporting",
+        "Understanding of File and Data Formats (CSV, JSON, XML)"
+      ]
+    },
+    {
+      "category": "Delivery and Testing",
+      "items": [
+        "Test Scenario Creation (Basic)",
+        "Integration, System and Regression Testing Exposure",
+        "Defect Tracking and Problem Reporting",
+        "Documentation and Change Transition Support"
+      ]
+    },
+    {
+      "category": "Agile and Collaboration",
+      "items": [
+        "Agile Framework (Working Knowledge)",
+        "Multi-team Coordination",
+        "Communication with US/UK Stakeholders",
+        "Proactive and Self-motivated Work Style"
+      ]
+    },
+    {
+      "category": "Technical and Domain Support",
+      "items": [
+        "SQL",
+        "REST API Integration",
+        "Python (Basic - scripting and automation)",
+        "EDI and Logistics Domain (Foundational Awareness)"
+      ]
+    },
+    {
+      "category": "Automation and AI Tools",
+      "items": [
+        "n8n (Workflow Automation, API Pipelines, Scheduling)",
+        "OpenAI (ChatGPT)",
+        "Anthropic (Claude)",
+        "Grok",
+        "DeepSeek",
+        "Ollama (Local Models)",
+        "Google AI",
+        "Text-to-Speech for Automation Workflows"
+      ]
+    },
+    {
+      "category": "Tools and Others",
+      "items": ["Git", "GitHub", "FFmpeg", "Basic Understanding of Deployment and Hosting"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "UI/UX Design Intern",
+      "company": "Zoro Innovations",
+      "period": "July 2025 - August 2025",
+      "certificateUrl": "https://drive.google.com/file/d/1Mdj6kdTXaku3_Z-Vh2tATbli0cOKpZ-h/view?usp=sharing",
+      "certificateLabel": "View Certificate",
+      "details": [
+        "Assisted in gathering and structuring feature needs, then documented functional updates and process notes for project handoffs.",
+        "Supported review cycles by validating flow behavior, recording issues, and communicating clarifications with team members."
+      ]
+    },
+    {
+      "title": "Interview Coordination Support (Freelance)",
+      "company": "IT Hiring Process Support",
+      "period": "2024 (4-Month Freelance Assignment)",
+      "details": [
+        "Handled data entry and schedule tracking tasks across concurrent requests, ensuring timely updates and accurate records.",
+        "Coordinated follow-ups with stakeholders through calls and email, supporting requirement clarity and smooth workflow execution."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Presents Agentic AI Day 2025",
+      "issuer": "Hack2skill",
+      "url": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I11874"
+    },
+    {
+      "name": "Critical Thinking and Problem Solving",
+      "issuer": "LinkedIn Learning"
+    },
+    {
+      "name": "Python Programming",
+      "issuer": "Coursera"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "Udemy"
+    }
+  ],
+  "projects": [
+    {
+      "name": "NBKRIST Student Portal",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/nbkrist-student-portal" },
+        { "label": "Web App", "url": "https://nbkrstudenthub.me/" }
+      ],
+      "details": [
+        "Managed structured student data workflows and interpreted usage patterns to support requirement updates and feature prioritization."
+      ],
+      "technologies": ["React", "TypeScript", "Supabase"],
+      "tools": ["Python scripts", "GitHub", "GitHub Actions"]
+    },
+    {
+      "name": "Bhagavad Gita Multilingual Video Automation",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Bhagavad-gita" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@Gita_Gyanaam/playlists" },
+        { "label": "Instagram", "url": "https://www.instagram.com/gita_gyanaam/" },
+        { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61577900636828" }
+      ],
+      "details": [
+        "Implemented process-driven automation with documented steps, helping improve tracking, repeatability, and cross-team collaboration."
+      ],
+      "technologies": ["Next.js", "React", "TypeScript"],
+      "tools": ["n8n", "FFmpeg", "Google Text-to-Speech"]
+    },
+    {
+      "name": "Kaveri Traders 3D Business Website",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/kaveri_traders" },
+        { "label": "Web App", "url": "https://nrenx.github.io/kaveri_traders/" }
+      ],
+      "details": [
+        "Captured stakeholder feedback, tracked change requests, and supported iterative delivery against agreed scope and timelines."
+      ],
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "tools": ["GitHub", "GitHub Pages", "WhatsApp CTA"]
+    },
+    {
+      "name": "Sign Language Translator AI",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Sign-Language-Translator_using_AI-ML" }
+      ],
+      "details": [
+        "Created and executed test scenarios, tracked defects, and documented behavior changes across iterations to support stable releases."
+      ],
+      "technologies": ["React", "TypeScript", "TensorFlow.js"],
+      "tools": ["MediaPipe Hands", "Google Colab", "Webcam detection"]
+    }
+  ],
+  "moreProjects": {
+    "label": "More projects available at github.com/nrenx",
+    "url": "https://github.com/nrenx"
+  }
+}
