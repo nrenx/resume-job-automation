@@ -1,0 +1,195 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "email": "narendrabollineni2002@gmail.com",
+    "phone": "+91 7989976214",
+    "portfolio": "https://nrenx.github.io/portfolio/",
+    "portfolioLabel": "nrenx.github.io/portfolio",
+    "github": "https://github.com/nrenx",
+    "githubLabel": "github.com/nrenx",
+    "linkedin": "https://linkedin.com/in/bollineninarendrachowdary",
+    "linkedinLabel": "linkedin.com/in/bollineninarendrachowdary",
+    "lastUpdated": "October 2026"
+  },
+  "objective": "Entry-level AI engineer with hands-on projects in Generative AI workflows, prompt-driven automation, and full-stack integration. Built practical solutions using Python scripting, TypeScript, REST APIs, and LLM tools for real-world use cases. Eager to contribute to agentic AI, RAG-style systems, and production-quality delivery at RealPage.",
+  "education": [
+    {
+      "degree": "Bachelor of Engineering in Computer Science and Engineering(B.Tech)",
+      "institution": "NBKRIST College (Autonomous), Vidyanagar, Tirupati",
+      "period": "2022-2026",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Intermediate(MPC)",
+      "institution": "Narayana Junior College, Gudur, Tirupati",
+      "period": "2020-2022",
+      "region": "Andhra Pradesh"
+    },
+    {
+      "degree": "Secondary School Certificate (SSC)",
+      "institution": "Narayana EM High School, ISKON City, Nellore",
+      "period": "2019-2020",
+      "region": "Andhra Pradesh"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming",
+      "items": [
+        "Python (Scripting, AI API integration, data workflows)",
+        "JavaScript",
+        "TypeScript",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Agentic AI and LLMs",
+      "items": [
+        "LLM API integration (OpenAI, Anthropic, Google AI)",
+        "Prompt engineering and structured outputs (JSON)",
+        "Function/tool-calling workflow design",
+        "Basic multimodal workflow understanding"
+      ]
+    },
+    {
+      "category": "RAG and Knowledge Systems",
+      "items": [
+        "RAG fundamentals and retrieval flow design",
+        "Embeddings and vector search concepts",
+        "Document ingestion and content pipelines",
+        "Knowledge quality improvement through reranking awareness"
+      ]
+    },
+    {
+      "category": "Full-Stack and Integration",
+      "items": [
+        "React (Vite)",
+        "REST API integration",
+        "Supabase (Authentication, Realtime DB, Storage)",
+        "Backend service integration patterns"
+      ]
+    },
+    {
+      "category": "Engineering Practices",
+      "items": [
+        "CI/CD workflow familiarity",
+        "Code reviews and Git workflows",
+        "Testing and maintainable code practices",
+        "Observability awareness (logging and tracing basics)"
+      ]
+    },
+    {
+      "category": "Automation and AI Tools",
+      "items": [
+        "n8n (Workflow Automation, API Pipelines, Scheduling)",
+        "OpenAI (ChatGPT)",
+        "Anthropic (Claude)",
+        "Grok",
+        "DeepSeek",
+        "Ollama (Local Models)",
+        "Google AI",
+        "Text-to-Speech for Automation Workflows"
+      ]
+    },
+    {
+      "category": "Tools and Others",
+      "items": ["Git", "GitHub", "FFmpeg", "Basic Understanding of Deployment and Hosting"]
+    }
+  ],
+  "experience": [
+    {
+      "title": "UI/UX Design Intern",
+      "company": "Zoro Innovations",
+      "period": "July 2025 - August 2025",
+      "certificateUrl": "https://drive.google.com/file/d/1Mdj6kdTXaku3_Z-Vh2tATbli0cOKpZ-h/view?usp=sharing",
+      "certificateLabel": "View Certificate",
+      "details": [
+        "Worked with product and engineering stakeholders to convert feature requirements into clear, user-ready interface workflows.",
+        "Supported iterative release quality by documenting defects, validating fixes, and improving delivery consistency."
+      ]
+    },
+    {
+      "title": "Interview Coordination Support (Freelance)",
+      "company": "IT Hiring Process Support",
+      "period": "2024 (4-Month Freelance Assignment)",
+      "details": [
+        "Managed structured workflow tracking with timely updates across candidates, interviewers, and coordination stakeholders.",
+        "Improved process reliability through follow-up automation support and clear communication checkpoints."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Presents Agentic AI Day 2025",
+      "issuer": "Hack2skill",
+      "url": "https://certificate.hack2skill.com/user/aidayideasubmission/2025H2S06AID-I11874"
+    },
+    {
+      "name": "Critical Thinking and Problem Solving",
+      "issuer": "LinkedIn Learning"
+    },
+    {
+      "name": "Python Programming",
+      "issuer": "Coursera"
+    },
+    {
+      "name": "Web Development Fundamentals",
+      "issuer": "Udemy"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Bhagavad Gita Multilingual Video Automation",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Bhagavad-gita" },
+        { "label": "YouTube", "url": "https://www.youtube.com/@Gita_Gyanaam/playlists" },
+        { "label": "Instagram", "url": "https://www.instagram.com/gita_gyanaam/" },
+        { "label": "Facebook", "url": "https://www.facebook.com/profile.php?id=61577900636828" }
+      ],
+      "details": [
+        "Built an agentic-style automation pipeline integrating AI generation, tool-calling steps, and multi-platform publishing workflows."
+      ],
+      "technologies": ["Next.js (App Router)", "React", "TypeScript", "Tailwind CSS", "JSON-based verse data handling"],
+      "tools": ["n8n", "Google Text-to-Speech", "Google AI workflows", "FFmpeg", "YouTube/Instagram/Facebook publishing"]
+    },
+    {
+      "name": "Sign Language Translator AI",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/Sign-Language-Translator_using_AI-ML" }
+      ],
+      "details": [
+        "Implemented a real-time AI translation application with multimodal input handling and latency-aware inference flow."
+      ],
+      "technologies": ["Vite", "React", "TypeScript", "TensorFlow.js", "MediaPipe Hands", "Tailwind CSS"],
+      "tools": ["On-device inference", "Webcam-based live detection", "Model training setup with Google Colab workflows"]
+    },
+    {
+      "name": "NBKRIST Student Portal",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/nbkrist-student-portal" },
+        { "label": "Web App", "url": "https://nbkrstudenthub.me/" }
+      ],
+      "details": [
+        "Developed full-stack modules with secure API integration, SQL-backed data access, and maintainable service interactions."
+      ],
+      "technologies": ["Vite", "React", "TypeScript", "React Router", "Tailwind CSS", "shadcn/ui", "Supabase (DB + Auth)"],
+      "tools": ["Python data scraping/upload scripts", "GitHub", "GitHub Actions deployment", "Google AdSense integration"]
+    },
+    {
+      "name": "Kaveri Traders 3D Business Website",
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/nrenx/kaveri_traders" },
+        { "label": "Web App", "url": "https://nrenx.github.io/kaveri_traders/" }
+      ],
+      "details": [
+        "Delivered a production web experience with reusable components, deployment workflow discipline, and business-focused UX outcomes."
+      ],
+      "technologies": ["Next.js 16 (App Router, static export)", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Lenis"],
+      "tools": ["GitHub", "GitHub Pages deployment", "Responsive UI", "WhatsApp CTA integration"]
+    }
+  ],
+  "moreProjects": {
+    "label": "More projects available at github.com/nrenx",
+    "url": "https://github.com/nrenx"
+  }
+}

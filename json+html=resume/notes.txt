@@ -1,0 +1,13 @@
+within india and if other than india i want remort jobs ,
+
+i want related to techinacal_it jobs (like software developer, webdeveloper , ui/ux designer, python developer , ai developer ,api builder, testing side , automations ,etc )  and ignore non it jobs,
+
+fresher friendly,
+search any valid website 
+
+i want output in csv formate or json
+
+before noteing the link check it is valid or not
+
+and dont use terminal to run the code or useing temp files to run and 
+to do task instead create a waste folder and add required scripts also in the that scripts when run only need to show minimal statements in the terminal like sucess or error 
