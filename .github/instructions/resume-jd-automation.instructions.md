@@ -1,6 +1,10 @@
 Task
 Update my JSON/HTML resume for a given job description (JD) to improve ATS match while keeping the same one-page layout.
 
+Decision Rule (Resume vs CV)
+- If the user explicitly asks for a CV/cover letter, follow the Cover Letter (CV) Automation section only.
+- If the user provides a JD without asking for a CV, follow the resume workflow by default.
+
 Project Files
 - Source data (immutable): /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=resume/resume.json
 - Layout template (immutable): /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=resume/resume.template.html
@@ -92,6 +96,71 @@ Output Requirements
 - Keep wording concise and professional.
 - If constraints conflict, prioritize one-page layout and state what was minimized.
 - If length exceeds one page, remove Soft Skills first, then shorten other content.
+- Confirm:
+	- company folder path
+	- selected JSON version (reused/new)
+	- final PDF full path
+	- final PDF exact file name
+
+Cover Letter (CV) Automation
+Project Files
+- Source data (immutable): /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=cover_letter/cover_letter.json
+- Layout template (immutable): /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=cover_letter/cover_letter.template.html
+- Build script: /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=cover_letter/build-cover-letter.mjs
+- Output parent folder: /Users/narendrachowdary/BNC/resume/Resume_automation/Companys_CV
+
+Primary Goal
+- Tailor the cover letter to the JD while keeping one-page output.
+
+Hard Constraints
+- Keep generated PDF to exactly one page.
+- Do not change visual layout settings in cover_letter.template.html (font size, spacing, margins, overall format) unless user asks.
+- Do not add extra blank lines.
+- Maintain two-line vertical gaps between main blocks using template spacing (date, recipient, subject, salutation, paragraphs, closing, signature).
+- Always use the signature image from /Users/narendrachowdary/BNC/resume/Resume_automation/json+html=cover_letter/NARENDRA-SIGNATURE.jpg.
+
+Recipient Address Rules
+- Only include recipient address lines when verified (online or provided by user).
+- If the address is unknown, leave addressLine1/addressLine2/cityStateZip empty or omit them.
+- Never use placeholders like "Street Address" or "City, State ZIP" in output.
+
+Allowed Edits
+- Date, recipient block, subject line, salutation, paragraphs, closing, and signature name.
+
+Formatting Rules (Strict)
+- Use 3-4 concise paragraphs; avoid long paragraphs that risk a second page.
+- If the page looks short with large bottom whitespace, use 4 concise paragraphs to balance the page while staying one page.
+- Do not add blank lines in JSON to create spacing; rely on template margins for the two-line gaps.
+
+Company Folder and Versioning Rules
+- Never edit base cover_letter.json directly.
+- For each company, work inside a numbered folder under Companys_CV:
+	- <Index>.<CompanyName> (examples: 1.TCS, 2.Google)
+- First version for a company:
+	- copy cover_letter.json to <Index>.<CompanyName>/<CompanyName>.json
+- Repeat JD handling:
+	- if meaning matches existing company version, reuse it
+	- if different, create next version in same folder:
+		- <CompanyName>-v1.json, <CompanyName>-v2.json, ...
+
+PDF Naming Rules
+- Unversioned JSON (Company.json) -> Bollineni_Narendra_CV.pdf
+- Versioned JSON (Company-v2.json) -> Bollineni_Narendra_CV-v2.pdf
+- Never auto-increment PDF versions independently from JSON version.
+
+Execution Flow
+1. Clean JD and identify company + role requirements.
+2. Extract ATS keywords and responsibilities.
+3. Create/reuse proper company folder and JSON version in Companys_CV.
+4. Apply edits only in allowed sections.
+5. Build from json+html=cover_letter folder:
+	 npm run cv
+6. If building a company-specific JSON version, swap selected JSON into build input, generate, then restore base workflow.
+7. Copy/save final PDF in company folder with JSON-version-matched PDF name.
+8. Validate one-page output.
+
+Output Requirements
+- Return updated JSON content changes only.
 - Confirm:
 	- company folder path
 	- selected JSON version (reused/new)

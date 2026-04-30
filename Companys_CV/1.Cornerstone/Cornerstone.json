@@ -1,0 +1,28 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "locationLine1": "Hyderabad, TS 500034",
+    "phone": "+91 7989976214",
+    "email": "narendrabollineni2002@gmail.com"
+  },
+  "date": "April 30, 2026",
+  "recipient": {
+    "name": "Hiring Manager",
+    "company": "Cornerstone",
+    "addressLine1": "Suite 600 South, 1601 Cloverfield Blvd",
+    "cityStateZip": "Santa Monica, CA 90404, USA"
+  },
+  "subject": "Junior Engineer (Fresher)",
+  "salutation": "Dear Hiring Manager,",
+  "paragraphs": [
+    "I am writing to express my interest in the Junior Engineer (Fresher) role at Cornerstone. As a final-year Computer Science and Engineering student, I am excited to start my career in full stack development and contribute to real-world applications.",
+    "Through coursework and projects, I have built basic web interfaces with React, implemented simple REST APIs, and worked with SQL databases for data storage and retrieval. I have foundational exposure to C#/.NET for backend logic and am comfortable assisting with testing, bug fixes, and small automation improvements.",
+    "I can assist with UI updates, API integration, and SQL query work while following team guidance and coding standards to deliver reliable changes.",
+    "I am interested in AI and machine learning and eager to support integrating ML features into applications. I value clear communication, teamwork, and continuous learning, and I would welcome the opportunity to grow with the Cornerstone engineering team."
+  ],
+  "closing": "Sincerely,",
+  "signature": {
+    "name": "Bollineni Narendra Chowdary",
+    "imagePath": "NARENDRA-SIGNATURE.jpg"
+  }
+}

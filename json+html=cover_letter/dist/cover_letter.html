@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter</title>
+    <style>
+      :root {
+        --text: #111111;
+        --muted: #555555;
+        --rule: #1b1b1b;
+        --line-height: 1.28;
+        --block-gap: calc(2 * var(--line-height) * 1em);
+      }
+
+      @page {
+        size: A4;
+        margin: 1.1cm 1.7cm 1.2cm 1.7cm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        color: var(--text);
+        font-family: "Times New Roman", Georgia, serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        font-size: 11pt;
+        line-height: var(--line-height);
+      }
+
+      .page {
+        width: 100%;
+      }
+
+      .letter-header {
+        text-align: center;
+      }
+
+      .name {
+        font-size: 24pt;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+
+      .header-rule {
+        margin: 6px auto 8px;
+        border-top: 2px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        width: 100%;
+        height: 0;
+      }
+
+      .contact-block {
+        font-size: 10.2pt;
+        color: var(--muted);
+        line-height: 1.2;
+      }
+
+      .contact-line {
+        margin: 2px 0;
+      }
+
+      .letter-body {
+        margin-top: var(--block-gap);
+      }
+
+      .date-line {
+        margin: 0 0 var(--block-gap);
+      }
+
+      .recipient-block {
+        margin: 0 0 var(--block-gap);
+      }
+
+      .recipient-line {
+        margin: 0;
+      }
+
+      .subject-line {
+        margin: 0 0 var(--block-gap);
+        font-weight: 600;
+      }
+
+      .subject-label {
+        font-weight: 700;
+      }
+
+      .salutation {
+        margin: 0 0 var(--block-gap);
+      }
+
+      .paragraph {
+        margin: 0 0 var(--block-gap);
+      }
+
+      .closing {
+        margin: 0 0 var(--block-gap);
+      }
+
+      .signature-block {
+        margin-top: 0;
+      }
+
+      .signature-image {
+        display: block;
+        max-height: 48px;
+        width: auto;
+        margin: 6px 0 4px;
+      }
+
+      .signature-name {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="letter-root"></main>
+
+    <script>
+      const letter = {"basics":{"name":"Bollineni Narendra Chowdary","locationLine1":"Hyderabad, TS 500034","phone":"+91 7989976214","email":"narendrabollineni2002@gmail.com"},"date":"April 30, 2026","recipient":{"name":"Hiring Manager","company":"Cornerstone","addressLine1":"Suite 600 South, 1601 Cloverfield Blvd","cityStateZip":"Santa Monica, CA 90404, USA"},"subject":"Junior Engineer (Fresher)","salutation":"Dear Hiring Manager,","paragraphs":["I am writing to express my interest in the Junior Engineer (Fresher) role at Cornerstone. As a final-year Computer Science and Engineering student, I am excited to start my career in full stack development and contribute to real-world applications.","Through coursework and projects, I have built basic web interfaces with React, implemented simple REST APIs, and worked with SQL databases for data storage and retrieval. I have foundational exposure to C#/.NET for backend logic and am comfortable assisting with testing, bug fixes, and small automation improvements.","I can assist with UI updates, API integration, and SQL query work while following team guidance and coding standards to deliver reliable changes.","I am interested in AI and machine learning and eager to support integrating ML features into applications. I value clear communication, teamwork, and continuous learning, and I would welcome the opportunity to grow with the Cornerstone engineering team."],"closing":"Sincerely,","signature":{"name":"Bollineni Narendra Chowdary","imagePath":"NARENDRA-SIGNATURE.jpg","imageUrl":"file:///Users/narendrachowdary/BNC/resume/Resume_automation/json+html=cover_letter/NARENDRA-SIGNATURE.jpg"}};
+
+      const esc = (value) =>
+        String(value ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+
+      const buildContact = (basics) => {
+        const lines = [];
+        if (basics.locationLine1) {
+          lines.push(`<div class="contact-line">${esc(basics.locationLine1)}</div>`);
+        }
+        if (basics.locationLine2) {
+          lines.push(`<div class="contact-line">${esc(basics.locationLine2)}</div>`);
+        }
+        const contactInline = [basics.phone, basics.email].filter(Boolean).map(esc).join(" | ");
+        if (contactInline) {
+          lines.push(`<div class="contact-line">${contactInline}</div>`);
+        }
+        return lines.join("");
+      };
+
+      const buildRecipient = (recipient) => {
+        const lines = [
+          recipient.name,
+          recipient.title,
+          recipient.company,
+          recipient.addressLine1,
+          recipient.addressLine2,
+          recipient.cityStateZip,
+        ].filter(Boolean);
+
+        if (!lines.length) {
+          return "";
+        }
+
+        return lines.map((line) => `<div class="recipient-line">${esc(line)}</div>`).join("");
+      };
+
+      const buildParagraphs = (paragraphs) =>
+        paragraphs.map((text) => `<p class="paragraph">${esc(text)}</p>`).join("");
+
+      const subjectLine = letter.subject
+        ? `<div class="subject-line"><span class="subject-label">RE:</span> ${esc(letter.subject)}</div>`
+        : "";
+
+      const signatureBlock =
+        letter.signature?.name || letter.signature?.imageUrl
+          ? `
+            <div class="signature-block">
+              ${letter.signature?.imageUrl ? `<img class="signature-image" src="${esc(letter.signature.imageUrl)}" alt="Signature" />` : ""}
+              ${letter.signature?.name ? `<div class="signature-name">${esc(letter.signature.name)}</div>` : ""}
+            </div>
+          `
+          : "";
+
+      const header = `
+        <header class="letter-header">
+          <div class="name">${esc(letter.basics?.name || "")}</div>
+          <div class="header-rule"></div>
+          <div class="contact-block">${buildContact(letter.basics || {})}</div>
+        </header>
+      `;
+
+      const html = `
+        ${header}
+        <section class="letter-body">
+          <div class="date-line">${esc(letter.date || "")}</div>
+          <div class="recipient-block">${buildRecipient(letter.recipient || {})}</div>
+          ${subjectLine}
+          <div class="salutation">${esc(letter.salutation || "")}</div>
+          <div class="paragraphs">${buildParagraphs(letter.paragraphs || [])}</div>
+          <div class="closing">${esc(letter.closing || "")}</div>
+          ${signatureBlock}
+        </section>
+      `;
+
+      document.getElementById("letter-root").innerHTML = html;
+      document.body.dataset.rendered = "true";
+    </script>
+  </body>
+</html>

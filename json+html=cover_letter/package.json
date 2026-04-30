@@ -1,0 +1,16 @@
+{
+  "name": "cover-letter-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cv": "node build-cover-letter.mjs --pdf",
+    "build:html": "node build-cover-letter.mjs --html",
+    "build:pdf": "node build-cover-letter.mjs --pdf",
+    "build": "node build-cover-letter.mjs --pdf"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.7.2"
+  }
+}

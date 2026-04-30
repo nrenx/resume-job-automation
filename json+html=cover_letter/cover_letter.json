@@ -1,0 +1,27 @@
+{
+  "basics": {
+    "name": "Bollineni Narendra Chowdary",
+    "locationLine1": "Hyderabad, TS 500034",
+    "phone": "+91 7989976214",
+    "email": "narendrabollineni2002@gmail.com"
+  },
+  "date": "April 30, 2026",
+  "recipient": {
+    "name": "Hiring Manager",
+    "company": "Company Name",
+    "addressLine1": "Street Address",
+    "addressLine2": "City, State ZIP"
+  },
+  "subject": "Junior Engineer",
+  "salutation": "Dear Hiring Manager,",
+  "paragraphs": [
+    "I am writing to express my interest in the Junior Engineer role at Company Name. As a final-year Computer Science and Engineering student, I am eager to contribute to product-focused teams that value clean implementation and steady iteration.",
+    "Through academic work and hands-on projects, I have built web applications using React, TypeScript, and REST APIs, and automated workflows using n8n and scripting. I enjoy turning requirements into practical solutions while keeping usability and performance in mind.",
+    "I value clear communication, careful testing, and steady learning, and I am excited to bring that mindset to your engineering team. I would welcome the opportunity to contribute to real-world delivery and grow alongside experienced engineers."
+  ],
+  "closing": "Sincerely,",
+  "signature": {
+    "name": "Bollineni Narendra Chowdary",
+    "imagePath": "NARENDRA-SIGNATURE.jpg"
+  }
+}
